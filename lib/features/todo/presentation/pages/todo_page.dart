@@ -12,6 +12,21 @@ import 'package:test_aiplus/features/todo/presentation/widgets/todo_list.dart';
 import '../bloc/todo_bloc.dart';
 import '../widgets/dates_row.dart';
 
+class TodoPageWrapper extends StatelessWidget {
+  const TodoPageWrapper({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        BlocProvider(create: (_) => TodoBloc()),
+        ChangeNotifierProvider(create: (_) => TodoViewModel()..fetchTodos()),
+      ],
+      child: const TodoPage(),
+    );
+  }
+}
+
 class TodoPage extends StatelessWidget {
   const TodoPage({super.key});
 

@@ -82,7 +82,7 @@ class TodoViewModel extends ChangeNotifier {
 
   // filter
   /// 0: all, 1: done, 2: undone
-  int _filterStatus = 1;
+  int _filterStatus = 0;
 
   int get filterStatus => _filterStatus;
 
